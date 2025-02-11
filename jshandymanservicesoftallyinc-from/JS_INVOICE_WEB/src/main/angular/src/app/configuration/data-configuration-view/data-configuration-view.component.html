@@ -1,0 +1,456 @@
+<body style="margin: 0 !important; padding: 0 !important; background-color: #f1f0f0;" bgcolor="#eeeeee">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #eeeeee;" bgcolor="#eeeeee">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+                    <tr>
+                        <td class="imgen ">
+                            <div class="divEspacio"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 35px;" bgcolor="#ffffff">
+                            <div
+                                style="display:inline-block; max-width:50%; min-width:100px; vertical-align:top; width:100%;">
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                    style="max-width:300px;">
+                                    <tr>
+                                        <td align="left" valign="top"
+                                            style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 800; line-height: 48px;">
+                                            <div style="height: 20px; width: auto;"></div> <a class="logo"
+                                                href="https://tallyhandyman.com"> <img class="logo-img"
+                                                    src="http://tallyhandyman.com/wp-content/uploads/2020/02/Logo_tally_handy_man-1.png"
+                                                    style="width:px" alt="Tally handy man" /> </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div
+                                style="display:inline-block; max-width:50%; min-width:100px; vertical-align:top; width:100%;">
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                    style="max-width:300px;">
+                                    <tr>
+                                        <td align="right" valign="top"
+                                            style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; line-height: 48px;">
+                                            <table cellspacing="0" cellpadding="0" border="0" align="right">
+                                                <tr>
+                                                    <td class="tdhandy">
+                                                        <div class="divhandy">
+                                                            <div class="divhandy-mobile">{{this.dataJshandyManServices.direction}}</div>
+                                                            <div class="divhandy-mobile">{{this.dataJshandyManServices.mail}}</div>
+                                                            <div class="divhandy-mobile">{{this.dataJshandyManServices.web}}</div>
+                                                            <div class="divhandy-mobile">{{this.dataJshandyManServices.phoneNumber}}</div>
+                                                            <div class="divhandy-mobile">{{this.dataJshandyManServices.taxRegNumber}}</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                            style="background-color: #ffffff; text-align:right; line-height: 22px; border-bottom: #0c0b0b solid 2px; margin-right: 5px;">
+                           <div style=" margin-right: 10px;">{{vistaName}}</div> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #ffffff;" bgcolor="#ffffff">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+                                <tr>
+                                    <td align="center" valign="top" style="font-size:0; padding: 35px;" bgcolor="#ffffff">
+                                        <div style="display:inline-block; max-width:50%; min-width:100px; vertical-align:top; width:100%;">
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;">
+                                                <tr>
+                                                    <td class="tdhandy">
+                                                        <div  class="divhandy2" style="width: 100%; height: 100%;">
+                                                            <div class="divhandy-mobile2">{{for}}</div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="tdhandy">
+                                                        <div class="divhandy">
+                                                           
+                                                           <div *ngIf="this.invoiceView.client.name">
+                                                               <div class="divhandy-mobile2">{{this.invoiceView.client.name}} {{this.invoiceView.client.lastName}}</div>
+                                                           </div>
+                                                           <div *ngIf="this.invoiceView.client.fullAdress">
+                                                               <div class="divhandy-mobile2">{{this.invoiceView.client.fullAdress}}</div>
+                                                           </div>
+                                                         
+                                                            <div *ngIf="this.invoiceView.client.emails.length > 0">
+                                                                <div class="divhandy-mobile2" *ngFor="let mailClient of  this.invoiceView.client.emails">
+                                                                    {{mailClient.email}}
+                                                                 </div>
+                                                            </div>
+                                                          
+                                                            <div *ngIf="this.invoiceView.client.phoneNumbers.length > 0">
+                                                                <div class="divhandy-mobile2" *ngFor="let phoneClient of  this.invoiceView.client.phoneNumbers">
+                                                                    {{phoneClient.number}}
+                                                                </div>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </td>
+                                                </tr>   
+                                                
+                                            </table>
+                                        </div>
+                                        <div style="display:inline-block; max-width:50%; min-width:100px; vertical-align:top; width:100%;">
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;">
+                                              
+                                                <tr>
+                                                    <td class="tdhandy">
+                                                        <div class="divhandy">
+                                                            <div class="divhandy-mobile2">
+                                                                {{tipoForm}} No:
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="tdhandy">
+                                                        <div class="divhandy">
+                                                            <div class="divhandy-mobile2">{{ this.invoiceView.idWork}}</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdhandy">
+                                                        <div class="divhandy">
+                                                            <div class="divhandy-mobile2"> Date: </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="tdhandy">
+                                                        <div class="divhandy">
+                                                            <div class="divhandy-mobile2"> {{todayDate | date: 'dd/MM/yyyy'}} </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr *ngIf="this.invoiceView.bills.length > 0">
+                                    <td
+                                        style="background-color: #ffffff; text-align:left; font-weight: bold; line-height: 22px;">
+                                        Product and Materials:
+                                    </td>
+                                </tr>
+                                <tr *ngIf="this.invoiceView.bills.length > 0">
+                                    <td align="left">
+                                        <table class="table-text">
+                                            <tr style="background-color: #fd604b; height: 25px;">
+                                                <th style="text-align: left; padding-left: 8%; color: #ffffff;">
+                                                    Description
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Quantity
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Rate
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Amount
+                                                </th>
+                                            </tr>
+                                            <tr style="height: 18px;" *ngFor="let producto of listProduct">
+                                                <td style="text-align: left; padding-left: 8%;"  
+                                                [ngClass]="producto.itemDeliteEdit ? 'tachado' : ''" *ngIf="this.listProduct.length > 0">
+                                                {{producto.description}}</td>
+                                                <td style="text-align: right; padding-right: 5%;"  
+                                                [ngClass]="producto.itemDeliteEdit ? 'tachado' : ''" *ngIf="this.listProduct.length > 0">
+                                                {{producto.stockNumber}}</td>
+                                                <td style="text-align: right; padding-right: 5%;"  
+                                                [ngClass]="producto.itemDeliteEdit ? 'tachado' : ''" *ngIf="this.listProduct.length > 0">
+                                                ${{producto.totalPriceWithOupTaxes}}</td>
+                                                <td style="text-align: right; padding-right: 5%;"  
+                                                [ngClass]="producto.itemDeliteEdit ? 'tachado' : ''" *ngIf="this.listProduct.length > 0">
+                                                ${{producto.totalPriceWithTaxes}}</td>
+                                            </tr>
+
+                                            <tr style="height: 18px;" *ngFor="let bill of this.listbills">
+                                                <td style="text-align: left; padding-left: 8%;" 
+                                                [ngClass]="bill.itemDeliteEdit ? 'tachado' : ''">
+                                                {{bill.description}}</td>
+                                                <td style="text-align: right; padding-right: 5%;"
+                                                [ngClass]="bill.itemDeliteEdit ? 'tachado' : ''">
+                                                {{billQuantity}}</td>
+                                                <td style="text-align: right; padding-right: 5%;"
+                                                [ngClass]="bill.itemDeliteEdit ? 'tachado' : ''">
+                                                ${{bill.billTotalWichoutTaxes}}</td>
+                                                <td style="text-align: right; padding-right: 5%;"
+                                                [ngClass]="bill.itemDeliteEdit ? 'tachado' : ''">
+                                                ${{bill.billTotal}}</td>
+                                            </tr>
+
+
+                                            <tr style="height: 18px;">
+                                                <td style="text-align: left; padding-left: 8%;"></td>
+                                                <td style="text-align: right; padding-right: 5%;"></td>
+                                                <td
+                                                    style="text-align: justify; padding-right: 5%; border-top: #0c0b0b solid 1px;">
+                                                    Subtotal:</td>
+                                                <td
+                                                    style="text-align: right; padding-right: 5%; border-top: #0c0b0b solid 1px;">
+                                                    ${{this.coreService.round(this.billLastTotal)}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+
+
+                                <tr *ngIf="this.invoiceView.services.length > 0">
+                                    <td
+                                        style="background-color: #ffffff; text-align:left; font-weight: bold; line-height: 22px;">
+                                        Service:
+                                    </td>
+                                </tr>
+                                <tr *ngIf="this.invoiceView.services.length > 0">
+                                    <td align="left">
+                                        <table class="table-text">
+                                            <tr style="background-color: #fd604b; height: 25px;">
+                                                <th style="text-align: left; padding-left: 8%; color: #ffffff;">
+                                                    Description
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Quantity
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Rate
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Amount
+                                                </th>
+                                            </tr>
+                                            <tr style="height: 18px;" *ngFor="let service of this.invoiceView.services">
+                                                <td style="text-align: left; padding-left: 8%;" 
+                                                [ngClass]="service.itemDeliteEdit ? 'tachado' : ''">
+                                                {{service.descriptionOfServicesCost}}</td>
+                                                <td style="text-align: right; padding-right: 5%;" 
+                                                [ngClass]="service.itemDeliteEdit ? 'tachado' : ''">
+                                                {{serviceQuantity}}</td>
+                                                <td style="text-align: right; padding-right: 5%;" 
+                                                [ngClass]="service.itemDeliteEdit ? 'tachado' : ''">
+                                                ${{service.servicesCost}}</td>
+                                                <td style="text-align: right; padding-right: 5%;" 
+                                                [ngClass]="service.itemDeliteEdit ? 'tachado' : ''">
+                                                ${{service.servicesCost}}</td>
+                                            </tr>
+
+                                    
+                                            <tr style="height: 18px;">
+                                                <td style="text-align: left; padding-left: 8%;"></td>
+                                                <td style="text-align: right; padding-right: 5%;"></td>
+                                                <td
+                                                    style="text-align: justify; padding-right: 5%; border-top: #0c0b0b solid 1px;">
+                                                    Subtotal:</td>
+                                                <td
+                                                    style="text-align: right; padding-right: 5%; border-top: #0c0b0b solid 1px;">
+                                                    ${{this.coreService.round(this.servicesTotal)}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="this.invoiceView.subcontractors.length > 0">
+                                    <td
+                                        style="background-color: #ffffff; text-align:left; font-weight: bold; line-height: 22px;">
+                                        SubContractors:
+                                    </td>
+                                </tr>
+                                <tr *ngIf="this.invoiceView.subcontractors.length > 0">
+                                    <td align="left">
+                                        <table class="table-text">
+                                            <tr style="background-color: #fd604b; height: 25px;">
+                                                <th style="text-align: left; padding-left: 8%; color: #ffffff;">
+                                                    Description
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Quantity
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Rate
+                                                </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;">
+                                                    Amount
+                                                </th>
+                                            </tr>
+                                            <tr style="height: 18px;" *ngFor="let contractors of this.invoiceView.subcontractors">
+                                                <td style="text-align: left; padding-left: 8%;" 
+                                                [ngClass]="contractors.itemDeliteEdit ? 'tachado' : ''">
+                                                {{contractors.description}}</td>
+                                                <td style="text-align: right; padding-right: 5%;" 
+                                                [ngClass]="contractors.itemDeliteEdit ? 'tachado' : ''"> 
+                                                {{subContractortsQuantity}} </td>
+                                                <td style="text-align: right; padding-right: 5%;" 
+                                                [ngClass]="contractors.itemDeliteEdit ? 'tachado' : ''">
+                                                {{this.coreService.round(contractors.totalCost - contractors.profitCalculation)}}</td>
+                                                <td style="text-align: right; padding-right: 5%;"
+                                                [ngClass]="contractors.itemDeliteEdit ? 'tachado' : ''">
+                                                {{this.coreService.round(contractors.totalCost - contractors.profitCalculation)}}</td>
+                                            </tr>
+
+                                            <tr style="height: 18px;" *ngIf="showProfit">
+                                                <td style="text-align: left; padding-left: 8%;"> Profit {{this.profit}}%</td>
+                                                <td style="text-align: right; padding-right: 5%;"> 
+                                                    {{serviceQuantity}}
+                                                </td>
+                                                <td style="text-align: right; padding-right: 5%;">
+                                                    ${{this.profitCalculation}}
+                                                </td>
+                                                <td style="text-align: right; padding-right: 5%;">
+                                                    ${{this.profitCalculation}}
+                                                 </td>
+                                            </tr>
+
+                                            <tr style="height: 18px;">
+                                                <td style="text-align: left; padding-left: 8%;"></td>
+                                                <td style="text-align: right; padding-right: 5%;"></td>
+                                                <td
+                                                    style="text-align: justify; padding-right: 5%; border-top: #0c0b0b solid 1px;">
+                                                    Subtotal:</td>
+                                                <td
+                                                    style="text-align: right; padding-right: 5%; border-top: #0c0b0b solid 1px;">
+                                                    {{this.coreService.round(this.subcontractorsTotal)}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td align="left" style="padding-top: 20px;">
+                                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td width="75%" align="left"
+                                                    style="font-family: arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px; border-top: 2px solid #eeeeee; ">
+                                                    Payment Details: </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <table class="table-text">
+                                            <tr style="background-color: #fd604b; height: 25px;">
+                                                <th style="text-align: left; padding-left: 8%; color: #ffffff;">
+                                                    Description </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;"> </th>
+                                                <th style="text-align: center; padding-right: 5%; color: #ffffff;">
+                                                    Subtotal </th>
+                                                <th style="text-align: right; padding-right: 5%; color: #ffffff;"> </th>
+                                            </tr>
+                                            <tr style="height: 18px;" *ngIf="this.invoiceView.bills.length > 0">
+                                                <td style="text-align: left; padding-left: 8%;"> Materials and Product</td>
+                                                <td class="total-Paind"> </td>
+                                                <td class="total-Paind"> ${{this.coreService.round(billLastTotal)}}</td>
+                                                <td style="text-align: right; padding-right: 5%; font-weight: bold;"></td>
+                                            </tr>
+                                            <tr style="height: 18px;" *ngIf="this.invoiceView.services.length > 0">
+                                                <td style="text-align: left; padding-left: 8%;">Labor Cost Service</td>
+                                                <td class="total-Paind"> </td>
+                                                <td class="total-Paind">${{this.coreService.round(this.servicesTotal)}}</td>
+                                                <td style="text-align: right; padding-right: 5%; font-weight: bold;">
+                                                </td>
+                                            </tr>
+
+                                            <tr style="height: 18px;" *ngIf="this.invoiceView.services.length > 0 || this.invoiceView.bills.length > 0">
+                                                <td style="text-align: left; padding-left: 8%;">Overhead {{this.invoiceView.overhead}}%</td>
+                                                <td class="total-Paind"> </td>
+                                                <td class="total-Paind">${{this.coreService.round(this.servicesTotalOverhead + this.billTotalOverhead)}}</td>
+                                                <td style="text-align: right; padding-right: 5%; font-weight: bold;">
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr style="height: 18px;" *ngIf="this.invoiceView.subcontractors.length > 0">
+                                                <td style="text-align: left; padding-left: 8%;">subContractors</td>
+                                                <td class="total-Paind"> </td>
+                                                <td class="total-Paind">${{this.coreService.round(this.subcontractorsTotal)}}</td>
+                                                <td style="text-align: right; padding-right: 5%; font-weight: bold;">
+                                                </td>
+                                            </tr>
+
+                                            <tr style="height: 18px;">
+                                                <td style="text-align: left; padding-left: 8%;"></td>
+                                                <!-- <td style="text-align: right; padding-right: 5%;"></td> -->
+                                                <td class="total-1">Total:</td>
+                                                <td class="total">${{this.coreService.round(this.invoiceView.totalCostWork) }}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr style="height: 2px; width: 100%;"></tr>
+                    <tr>
+                        <td align="center"  bgcolor="#ffffff">
+                            <div style="margin-top: 10px; padding: 35px; background-color: #fffbfbb4;">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                style="max-width:600px;">
+                                <tr>
+                                    <td
+                                        style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; ">
+                                        <div style="font-size: 10px; margin: 0px; color: #0c0b0b;">
+                                            <div style="text-align: left; margin-top: 20px; margin-bottom: 10px;">
+                                                Comments: </div>
+                                           <div style="text-align: justify; line-height: 18px;">{{this.dataJshandyManServices.coments1}}
+                                            </div>
+                                            <div style="line-height: 20px; margin-top: 10px; margin-bottom: 10px;"> 
+                                                {{this.dataJshandyManServices.coments2}} 
+                                            </div>
+                                            <div style="line-height: 20px;">
+                                                {{this.dataJshandyManServices.coments3}} 
+                                            </div>
+                                            <div style="line-height: 20px;">
+                                                {{this.dataJshandyManServices.coments4}} 
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+                          
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding: 35px; background-color: #ffffff;" bgcolor="#ffffff">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                style="max-width:600px;">
+                                <tr style="height: 50px; width: 100%;"></tr>
+                                <tr>
+                                    <td align="left"
+                                        style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 24px;">
+                                <tr>
+                                    <td align="left">
+                                         <table style=" margin-right: 20px; margin-top: 30px; font-size: 12px; font-family: arial, sans-serif; border-collapse: collapse;  width: 100%; margin-left: 50px;">
+                                            <tr style="height: 18px;">
+                                                <td style=" text-align: center; border-top: #000000 solid 2px;">
+                                                    {{this.dataJshandyManServices.companyName}}
+                                                    <!-- JS Handyman Services of Tally, Inc -->
+                                                </td>
+                                                <td style="width: 40px;"> </td>
+                                                <td style="text-align: center; border-top: #000000 solid 2px;"> 
+                                                    Client's signature
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                        </td>
+                    </tr>
+                    <tr style="height: 50px; width: 100%;"></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+</body>
+

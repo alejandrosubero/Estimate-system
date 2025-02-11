@@ -1,0 +1,39 @@
+
+
+  <header>
+    <mat-toolbar class="col mat-elevation-z8 titleMarco" >
+       <div>{{data.title}}</div>
+    </mat-toolbar>
+ </header>
+
+<br>
+<body class="topeSeparation" >
+
+  <!-- <div class="title" mat-dialog-title style="background-color: rgba(0, 0, 0, 0.301); color: rgb(12, 12, 12);">
+   {{data.title}}
+</div> -->
+
+<div mat-dialog-content class="d-flex justify-content-center">
+  {{data.msg}}
+</div>
+<a href="#"></a>
+<br>
+<hr style="margin-bottom: 0px !important">
+
+<div class="mt-2 mb-2 d-flex justify-content-center">
+
+  <button mat-button [mat-dialog-close]="false" class="m-1 ml-5" style="background-color: rgb(202, 5, 5); color: white;" *ngIf="data.cancel">
+    {{data.cancel}}
+</button>
+
+ <button mat-button [mat-dialog-close]="true" 
+          class="m-1 ml-5" 
+          style="background-color: green; color: white;"
+          *ngIf="data.confirm != null && data.confirm !== undefined">
+    {{data.confirm}}
+</button>
+
+
+</div>
+</body>
+

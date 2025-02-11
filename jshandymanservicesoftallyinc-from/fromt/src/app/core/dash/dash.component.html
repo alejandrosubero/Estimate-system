@@ -1,0 +1,142 @@
+
+<div class="grid-container">
+
+  <header>
+    <label for="title" class="m-1 h3">{{this.title}}</label>
+</header>
+
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+
+    <!--Mini Cards 1 -->
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card title="Work started And Invoiced In The Year"  [showMenu]="false">
+        <app-mini-card [value]="this.data?.worksCreateInTheYear" [isCurrency]="false" imagName="cuantity Icon"></app-mini-card>
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card 
+          title="Total Invoiced In The Year" 
+          [showMenu]="true"  
+          [isCurrency]="true" 
+          imagName="currency Icon" 
+          [value]="this.data?.totalInvoicedInTheYear"
+          [valueLista]="this.data?.listInvoiceInYear">
+        <app-mini-card [value]="this.data?.totalInvoicedInTheYear" [isCurrency]="true" imagName="currency Icon"></app-mini-card> 
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card 
+          title="Total Amount Paid In Year" 
+          [showMenu]="true"  
+          [isCurrency]="true" 
+          imagName="currency Icon" 
+          [value]="this.data?.totalAmountPaindIntYear"
+          [valueLista]="this.data?.listAmountPaind">
+        <app-mini-card [value]="this.data?.totalAmountPaindIntYear" [isCurrency]="true" imagName="currency Icon"></app-mini-card> 
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card 
+        title="Total Remaining Payable In The Year" 
+        [showMenu]="true"  
+        [isCurrency]="true" 
+        imagName="currencyR Icon" 
+        [value]="this.data?.totalRemainingPayableInTheYear" 
+        [valueLista]="this.data?.listRemainingPayable">
+        <app-mini-card [value]="this.data?.totalRemainingPayableInTheYear" [isCurrency]="true" imagName="currencyR Icon"></app-mini-card> 
+      </app-card>
+    </mat-grid-tile>
+
+    <!--Mini Cards End -->
+
+    <!--Charts -->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Amount Paid, Invoiced and Estimate Approved In Year" [showMenu]="false">
+        <div>
+          <app-chart [value]="this.data?.listPaidInvoiceEstimate" ></app-chart>
+        </div>
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Estimate Apruve Vs Create" [showMenu]="false">
+        <div>
+          <app-chart2 [value]="this.data?.listEstimateApruveAndCreate"></app-chart2>
+        </div>
+      </app-card>
+    </mat-grid-tile>
+    <!--Charts End-->
+
+        
+    <!--Mini Cards 2 -->
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card 
+        title="Work In Progress" 
+        [showMenu]="true"  
+        [isCurrency]="false" 
+        imagName="workCurse Icon" 
+        [value]="this.data?.numberWorksInProgress"
+        [valueLista]="this.data?.listWorksInProgress">
+        <app-mini-card [value]="this.data?.numberWorksInProgress" [isCurrency]="false" imagName="workCurse Icon"></app-mini-card> 
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card 
+        title="Works On Pause" 
+        [showMenu]="true"  
+        [isCurrency]="false" 
+        imagName="workPause Icon" 
+        [value]="this.data?.numberWorksInPause"
+        [valueLista]="this.data?.listWorksPause"> 
+        <app-mini-card [value]="this.data?.numberWorksInPause" [isCurrency]="false" imagName="workPause Icon"></app-mini-card> 
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card 
+        title="Completed Works In Year"   
+        [showMenu]="true"  
+        [isCurrency]="false" 
+        imagName="workEnd Icon" 
+        [value]="this.data?.workFinalDateInYear"
+        [valueLista]="this.data?.listWorksFinalices">
+        <app-mini-card [value]="this.data?.workFinalDateInYear" [isCurrency]="false" imagName="workEnd Icon"></app-mini-card> 
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard.cols" [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card 
+        title="Sent Invoices" 
+        [showMenu]="true"  
+        [isCurrency]="false" 
+        imagName="workSent Icon" 
+        [value]="this.data?.numberWorksSend" 
+        [valueLista]="this.data?.listWorksSend">
+          <app-mini-card [value]="this.data?.numberWorksSend" [isCurrency]="false" imagName="workSent Icon"></app-mini-card> 
+      </app-card>
+    </mat-grid-tile>
+
+    <!--Mini Cards End -->
+
+
+ 
+
+
+    <!--Table-->
+    <!-- <mat-grid-tile [colspan]="( cardLayout | async )?.table.cols" [rowspan]="( cardLayout | async )?.table.rows">
+      <app-card title="Card 9"  [showMenu]="true">
+        <div>Table Content Here</div>
+      </app-card>
+    </mat-grid-tile> -->
+    <!--Table End-->
+
+  </mat-grid-list>
+</div>
+
+<br>

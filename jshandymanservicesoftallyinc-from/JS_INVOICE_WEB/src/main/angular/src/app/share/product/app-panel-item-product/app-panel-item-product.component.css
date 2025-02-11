@@ -1,0 +1,18 @@
+.exa-h2 {
+    margin: 10px;
+  }
+  
+  .exa-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .exa-margin {
+    margin: 0 10px;
+  }
+
+  .panelBackground{
+    background-color: rgb(250, 247, 244);
+  }

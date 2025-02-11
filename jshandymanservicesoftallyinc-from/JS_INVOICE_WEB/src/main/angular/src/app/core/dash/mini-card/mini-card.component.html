@@ -1,0 +1,32 @@
+<!-- <mat-card class="dashboard-card">
+    <mat-card-header class="card-header">
+        <mat-card-title>
+            <h6 class="value-text" *ngIf="isCurrency">{{value | currency:'$':'symbol':'0.0' }}</h6>
+            <h6 class="value-text" *ngIf="!isCurrency">{{value}}</h6>
+        </mat-card-title>
+        <div mat-card-avatar class="card-icon">
+            <mat-icon [color]="color" class="avatar-icon" svgIcon="currency Icon" *ngIf="isCurrency"></mat-icon>
+            <mat-icon [color]="color" class="avatar-icon" *ngIf="!isCurrency">{{icon}}</mat-icon>
+        </div>
+    </mat-card-header>
+    <div class="title-text">{{title}}</div>
+</mat-card> -->
+
+<div class="container">
+  <div class="row ">
+
+    <div class="col">
+
+      <div *ngIf="isCurrency">
+        <span class="glyphicon"><mat-icon [svgIcon]="imagName">{{icon}}</mat-icon></span>
+        <span class="demo-text ml-1">{{value | currency:'$':'symbol':'0.0' }}</span>
+      </div>
+
+      <div *ngIf="!isCurrency">
+        <span class="glyphicon"><mat-icon [svgIcon]="imagName">{{icon}}</mat-icon></span>
+        <span class="demo-text  ml-1">{{value}}</span>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+
+ <section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-icon-button aria-label="vertical three dot icon" (click)="onSelltings()">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="h4 text-center font-weight-light p-1 textTitle"> 
+    Taxes Management
+</div>
+
+
+<div class="container">
+
+
+
+  <form [formGroup]="profileForm" class="col-12">
+
+    <div class="border p-2 border fondoForm mat-elevation-z4">
+
+      <label for="taxes" class="m-1 textColor">Taxes %:</label>
+    <div class="input-group mb-3">
+      <input type="number" min="0" class="form-control" formControlName="taxes" id="taxes"
+        placeholder="Taxes in %" aria-label="taxes" aria-describedby="basic-addon2">
+    </div>
+
+
+    <label for="overHead" class="m-1 textColor">OverHead:</label>
+    <div class="input-group mb-3">
+      <input type="number" min="0"  class="form-control" formControlName="overHead" id="overHead"
+        placeholder="OverHead in %" aria-label="overHead" aria-describedby="basic-addon2">
+    </div>
+
+
+    <label for="description" class="m-1 textColor">Description:</label>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" formControlName="description" id="description"
+        placeholder="Description" aria-label="description" aria-describedby="basic-addon2">
+    </div>
+
+    </div>
+
+  </form>
+
+  <div class="d-flex justify-content-center mt-2">
+    <button class="btn btn-primary m-1 " (click)=" send()">Save</button>
+    <button class="btn btn-primary m-1 " (click)=" onSelltings()">Cancel</button>
+  </div>
+
+</div>
+

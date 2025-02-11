@@ -1,0 +1,63 @@
+<div class="container panelBackground" >
+    <div class="row">
+      <div class="col mat-elevation-z4" style="background-color: rgba(0, 0, 0, 0.966); color: rgb(253, 253, 253); height: 40px;">
+        <div class="title" style="margin-top: 8px;">
+          {{this.title}}
+        </div>
+      </div>
+  
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        {{this.mensaje}}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12">
+        <section class="exa-section">
+          <mat-checkbox class="exa-margin" [(ngModel)]="checked" [(indeterminate)]="indeterminate"
+            [labelPosition]="labelPosition" [color]="color" [disabled]="disabled">
+            Do you want to change the price of the item?:
+          </mat-checkbox>
+        </section>
+      </div>
+    </div>
+  
+    <div class="row" *ngIf="checked">
+      <div class="col-12">
+        <div class="mt-2 mb-2 d-flex justify-content-center">
+          <form [formGroup]="inputForm" class="col-12">
+            <div class="input-group">
+              <label for="priceOrTotal" class="m-1">Price/Total:</label>
+              <input type="number" min="0" placeholder="0"
+                  class="form-control" 
+                  formControlName="priceOrTotal"  id="priceOrTotal" 
+                  aria-label="priceOrTotal" aria-describedby="basic-addon2" 
+                  (keyup.enter)="changePrices()"
+                  (focusout)="changePrices()" 
+                  required>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="mt-5 mb-2 d-flex justify-content-center">
+          <button mat-button class="m-1 ml-5 buttonColorRed"
+            (click)="onCancel()">
+            Cancel
+          </button>
+          <button mat-button class="m-1 ml-5 buttonColorGreen"  (click)="onAgree()">
+            Agree
+          </button>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+ 

@@ -1,0 +1,162 @@
+
+<div class="topeSeparation">
+    <header>
+       <mat-toolbar class="col mat-elevation-z8 titleMarco">
+        <label for="title" class="m-1 h3">{{this.title}}</label>
+       </mat-toolbar>
+    </header>
+ 
+    <body class="mb-3 mt-3">
+        <form [formGroup]="subContractorsForm" novalidate  class="container-fluid">
+   
+            <div class="container-fluid mt-1">
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Company" formControlName="company" required>
+                        <mat-error *ngIf="subContractorsForm.controls['company'].hasError('required')">
+                            The company is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="container-fluid mt-1">
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="Phone Number" formControlName="phoneNumber" required>
+                        <mat-error *ngIf="subContractorsForm.controls['phoneNumber'].hasError('required')">
+                            the phone Number is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="email" placeholder="Email" formControlName="mail" required>
+                        <mat-error *ngIf="subContractorsForm.controls['mail'].hasError('required')">
+                            the Email is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="container-fluid">
+                <div class="row-12 mt-2">
+                    <mat-form-field style="width: 100%;" appearance="fill">
+                        <textarea matInput placeholder="Description*" formControlName="description" (keyup)="onDescription()" required></textarea>
+                        <mat-error *ngIf="subContractorsForm.controls['description'].hasError('required')">
+                         The Description is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="container-fluid mt-1">
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="Cost Of Service" formControlName="costOfwork" 
+                         (keyup)="total()" required>
+                        <mat-error *ngIf="subContractorsForm.controls['costOfwork'].hasError('required')">
+                            Cost Of Service is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="Profit" formControlName="profit" 
+                        (keyup)="total()">
+                        <mat-error *ngIf="subContractorsForm.controls['profit'].hasError('required')">
+                            The profit is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid mt-1">
+                <div class="row">
+                  <div class="col">
+                    <div class="input-group mt-2 d-flex align-items-center" style="width: 100%;">
+                        <!-- <label for="dateOfWork" class="mr-1">Date of Work:</label> -->
+                        <mat-form-field appearance="fill">
+                          <input matInput placeholder="Date of Work" [matDatepicker]="picker1" formControlName="dateOfWork" (dateChange)=" addWorkEvent('change', $event)">
+                          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                          <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="input-group mt-2 d-flex align-items-center" style="width: 100%;">
+                        <!-- <label for="datePain" class="mr-1">Date of pain:</label> -->
+                        <mat-form-field appearance="fill">
+                          <input matInput placeholder="Date of pain" [matDatepicker]="picker2" formControlName="datePain" (dateChange)="addPainEvent('change', $event)">
+                          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                          <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid mb-1">
+                <div class="col-sm-12" *ngIf="this.subcontractor.billListSubcontractor">
+                    <div class="m-2" >
+                      <label for="starDate" class="h4">Bills:</label>
+                      <button mat-mini-fab 
+                            color="primary" 
+                            aria-label="button with a plus new client" 
+                            class="m-1 flowRight" 
+                            (click)="onAddNewBill(false)">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                    </div>
+                    <app-bill-list style="width: 100%;"
+                        [billList]="this.billList" 
+                        (deleteBill)="deleteBill($event)" (edidBillEvent)="addbill($event)"
+                        >
+                    </app-bill-list>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="container-fluid">
+                    <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput type="number"
+                                    placeholder="Total Cost" 
+                                    formControlName="totalCost" 
+                                    required 
+                                    (keyup)="totalManual()" required>
+                            <mat-error *ngIf="subContractorsForm.controls['totalCost'].hasError('required')">
+                                Total Cost is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>  
+                    </div>
+                </div>
+
+          </form>
+
+<br>
+
+  <div class="flex-container mt-2 mb-2" >
+    <button mat-button class="m-1 buttonColorGreen" (click)="onSave()">Save</button>
+    <button mat-button class="m-1 buttonColorRed"  (click)="onCancel()">cancel</button>
+    <button mat-button class="m-1 buttonColorBlue"   (click)="panelItem()" 
+    *ngIf="this.subcontractor.billListSubcontractor !== undefined && this.subcontractor.billListSubcontractor != null && this.subcontractor.billListSubcontractor.length == 0 && this.subcontractor.idSubContractor !== undefined &&  this.subcontractor.idSubContractor != null &&  !this.subcontractor.itemDeliteEdit">    
+    Modifict
+     </button>
+  </div>
+
+</body>
+</div>

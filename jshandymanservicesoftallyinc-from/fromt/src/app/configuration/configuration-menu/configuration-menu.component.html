@@ -1,0 +1,115 @@
+
+  <section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-icon-button aria-label="vertical three dot icon" (click)="onBackMenu()">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+
+    <div class="h4 text-center font-weight-light p-1 textTitle"> 
+        Settings Management
+    </div>
+
+<div class="ex-action-buttons mt-1">
+  <button mat-raised-button (click)="accordion.openAll()" class="flowRight mr-1 border">Expand All</button>
+  <button mat-raised-button (click)="accordion.closeAll()" class="flowRight ml-1 mr-1 border">Collapse All</button>
+</div>
+
+<br>
+
+<div class="mt-2">
+  <mat-accordion class="ex-headers-align" multi>
+
+    <mat-expansion-panel [expanded]="true" #User_Configuration class="border">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="Dold"> User Configuration </mat-panel-title>
+        <mat-panel-description> User Management  </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="d-flex flex-column bd-highlight mb-3">
+        <div class="p-3 bd-highlight border">
+          <div>
+            <mat-label>
+              <Samp class="DoldTex">The user configuration</Samp> 
+              will allow you to change your access data to the system.
+            </mat-label>
+            <button mat-raised-button type="button" class="ml-1 flowRight" color="primary" (click)="onSelltingsUser()">
+              Set Up </button>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel [expanded]="false" #Avance_Configuration class="border">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="Dold"> Avance Configuration </mat-panel-title>
+        <mat-panel-description> System Configuration </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="d-flex flex-column bd-highlight mb-3">
+        <div class="p-3 bd-highlight border">
+          <div>
+            <mat-label>
+              <Samp class="DoldTex">Configuration of invoice or Estimate data</Samp> 
+              will allow you to add the company data, work expiration date alert, to the system.
+            </mat-label>
+            <button mat-raised-button type="button" class="ml-1 flowRight" color="primary" (click)="onSelltingsData()">
+              Set Up </button>
+          </div>
+        </div>
+
+        <div class="p-3 bd-highlight border">
+          <div>
+            <mat-label>
+               <Samp class="DoldTex">Taxes configuration</Samp>
+               , allows you to configure the current value of taxes in the system.
+            </mat-label>
+            <button mat-raised-button type="button" class="ml-1 flowRight" color="primary" (click)="onSelltingsTaxes()">
+              Set Up </button>
+          </div>
+        </div>
+
+        <div class="p-3 bd-highlight border">
+          <div>
+            <mat-label> 
+              <Samp class="DoldTex">Mail server configuration</Samp>
+              , allows you to configure the access data to the mail server for sending, in the system.
+            </mat-label>
+            <button mat-raised-button type="button" class="ml-1 flowRight" color="primary" (click)="onSelltingsMail()">
+              Set Up </button>
+          </div>
+        </div>
+
+        <div class="p-3 bd-highlight border">
+          <div>
+            <mat-label> 
+              <Samp class="DoldTex">Set template for Mail</Samp>
+              , allows you to configure the template to the mail for sending, in the system.
+            </mat-label>
+            <button mat-raised-button type="button" class="ml-1 flowRight" color="primary" (click)="onSetTemplate()">
+              Set Up </button>
+          </div>
+        </div>
+        
+
+      </div>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
+
+
+
+<!-- <mat-form-field appearance="fill">
+      <mat-label>First name</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Age</mat-label>
+      <input matInput type="number" min="1">
+    </mat-form-field> -->

@@ -1,0 +1,139 @@
+
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark barbackground" style="width: 100%; z-index: 10;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/jshandy-man-services/menu/home">
+        <!-- <img src="../../../assets/images/Logo_tally_handy_man-1.png" alt="" width="200"> -->
+        <img src="assets/images/Logo.png" alt="" width="200">
+      </a>
+      <!-- class="form-inline my-2 my-lg-0 pl-sm-1 ml-sm-1  pl-md-2 ml-md-2 pl-lg-5 ml-lg-5 pl-xl-5 ml-xl-5" -->
+      <div class="navbar-brand">
+        <div class="ml-3 pl-5" style="width: 100%; max-width: 900px; min-width: auto;">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search ..." 
+            (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto [(ngModel)]="searchInput">
+          </div>
+      </div>
+  
+      <button class="navbar-toggler" 
+              type="button" 
+              (click)="iscollapse = !iscollapse" 
+              [attr.aria-expanded]="!iscollapse"
+              aria-controls="navbarSupportedContet" 
+              data-targe="#navbarSupportedContet" 
+              data-toggle="collapse"
+              aria-label="Toogle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse p-2" id="bs-example-navbar-collapse-1" [ngbCollapse]="iscollapse">
+        <ul class="navbar-nav ml-auto show">
+          <li class="nav-item  nav-bt1">
+            <a class="nav-link text-white" [routerLink]="[ '/jshandy-man-services/menu/home' ]" (click)="changeColase()">Home</a></li>
+          <li class="nav-item  nav-bt1">
+            <a class="nav-link text-white" [routerLink]="[ '/jshandy-man-services/menu/estimate/list' ]" (click)="changeColase()">Estimate</a></li>
+          <li class="nav-item  nav-bt1">
+            <a class="nav-link text-white" [routerLink]="[ '/jshandy-man-services/menu/invoice/list' ]" (click)="changeColase()">Invoice</a>
+          </li>
+          <li class="nav-item  nav-bt1">
+            <a class="nav-link text-white" [routerLink]="[ '/jshandy-man-services/menu/client/client-list' ]" (click)="changeColase()">Clients</a></li>
+          <li class="nav-item  nav-bt1">
+            <a class="nav-link text-white" [routerLink]="[ '/jshandy-man-services/menu/search' ]" (click)="changeColase()">Search</a></li>
+        </ul>
+      </div>
+  
+      <div class="collapse navbar-collapse p-2" id="navbarSupportedContet" [ngbCollapse]="iscollapse2">
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <li class="nav-item  nav-bt">
+              <a [matBadge]="numberAlerts" 
+                matBadgePosition="before" 
+                [matBadgeColor]="colorAlert" 
+                *ngIf="numberAlerts == 0" 
+                #tooltip="matTooltip"
+                matTooltip="NOTIFICATION OF DAYS LATE IN A JOB"
+                matTooltipClass="tooltip-tooltip-wite"
+                [matTooltipPosition]="position.value"
+                aria-label="Button"
+                class="nav-link text-white mt-2">
+                <mat-icon style="color: white; height: 5px; width: 5px;">notifications</mat-icon>
+             </a>
+              <a [matBadge]="numberAlerts" 
+                  matBadgePosition="before" 
+                  [matBadgeColor]="colorAlert" 
+                  *ngIf="numberAlerts > 0" 
+                  #tooltip="matTooltip"
+                  matTooltip="NOTIFICATION OF DAYS LATE IN A JOB"
+                  matTooltipClass="tooltip-tooltip-red"
+                  [matTooltipPosition]="position.value"
+                  aria-label="Button"
+                  class="nav-link text-white mt-2"
+                  (click)="onSeeTablet()">
+                <mat-icon style="color: red; height: 5px; width: 5px;" >notifications_active</mat-icon>
+              </a>
+          </li>
+
+          <li class="nav-item  nav-bt">
+            <a class="nav-link text-white">
+              <button mat-button [matMenuTriggerFor]="menu">
+                <img id="pifileImg" src="" class="card-img-top profileImagen" alt="...">
+              </button>
+              <mat-menu #menu="matMenu">
+                <!-- <button mat-menu-item>Item-1</button> -->
+                <button mat-menu-item (click)="onSelltings()">Selltings</button>
+                <button mat-menu-item (click)="onCreateNewEstimate()">New Estimate</button>
+                <button mat-menu-item (click)="onCreateNewWork()">New Work</button>
+                <button mat-menu-item (click)="logout()">Logout</button>
+              </mat-menu>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-sm-2 col-md-2 col-lg-2 col-xl-2 d-none d-sm-block d-md-block d-lg-block d-xl-block  pt-2 left-panel">
+      <div class="d-flex flex-column">
+        <div class="menueulli itemMenue mt-3">
+          <ul class="mt-2">
+            <li class="bt">
+              <a class="text-white" routerLink="/jshandy-man-services/menu/home">Home</a>
+            </li>
+            <li class="bt">
+              <a class="text-white" routerLink="/jshandy-man-services/menu/estimate/list">Estimate</a>
+            </li>
+            <li class="bt">
+              <a class="text-white" routerLink="/jshandy-man-services/menu/invoice/list">Invoice</a>
+            </li>
+            <li class="bt">
+              <a class="text-white" routerLink="/jshandy-man-services/menu/client/client-list">Clients</a>
+            </li>
+            <li class="bt">
+              <a class="text-white" routerLink="/jshandy-man-services/menu/search">Search</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm pt-2 ">
+
+
+
+      <div class="rithg-panel">
+        <hr>
+        <br>
+        <br>
+        <br>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- https://stackoverflow.com/questions/38796541/how-to-add-font-awesome-to-angular-2-cli-project -->
+
+
+

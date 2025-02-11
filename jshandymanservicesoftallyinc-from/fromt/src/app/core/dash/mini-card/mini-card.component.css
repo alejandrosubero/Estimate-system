@@ -1,0 +1,71 @@
+.dashboard-card {
+    /* position: absolute; */
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.value-text {
+    margin: 0;
+}
+
+.title-text {
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    color: grey;
+}
+
+.avatar-icon {
+    margin: 15px;
+    transform: scale(2);
+}
+
+.duration {
+    color: grey;
+}
+
+.difference-text {
+    text-align: center;
+    margin-top: 10px ;
+}
+
+.card-icon {
+    margin-right: 15px;
+}
+
+.card-header {
+    justify-content: center;
+}
+
+.green-text {
+    color: #008000;
+}
+
+.red-text {
+    color: red;
+}
+
+
+.cont {
+    display: inline-block;
+    border: dotted 1px red;
+    padding: 5px
+  }
+  
+  .demo-text{
+    clear: left;
+    text-align: right;
+    vertical-align: middle;
+    line-height:25px;
+    font-weight: 900;
+  }
+  
+  span.glyphicon
+  {
+    display:inline-block;
+    vertical-align:top;
+  }

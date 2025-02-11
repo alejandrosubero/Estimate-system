@@ -1,0 +1,98 @@
+<section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-icon-button aria-label="vertical three dot icon" (click)="onSelltings()">
+          <mat-icon >arrow_back_ios</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <div class="text-center font-weight-light p-1 textTitle mb-2"> 
+      <samp class="h4">{{this.title}}</samp>
+      <div class="caja ex-button-row mb-1 mt-1 flowRight" >
+        <app-mini-card 
+            [value]="this.worksSend" 
+            [isCurrency]="isCurrency" 
+            [imagName]="this.nameImag">
+        </app-mini-card> 
+    </div>
+  </div>
+  
+  
+  
+  <div class="topeSeparation">
+      <!-- <header>
+         <label for="title" class="m-1 h3">{{this.title}}</label>
+     </header> -->
+      <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSourceInvoice" matSort  (matSortChange)="announceSortChange($event)">
+      
+          <!-- ID Column -->
+          <ng-container matColumnDef="idWork">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by ID"> ID </th>
+            <td mat-cell *matCellDef="let row"> {{row.idWork}} </td>
+          </ng-container>
+      
+          <!-- Progress Column -->
+          <ng-container matColumnDef="owner">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name"> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.owner}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="createDay">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Create Date">Create Date </th>
+            <td mat-cell *matCellDef="let row"> 
+                {{row.createDay| date: 'dd/MM/yyyy'}}</td>
+          </ng-container>
+      
+          <!-- Fruit Column -->
+          <ng-container matColumnDef="totalCostWork">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Total Cost"> Total Cost </th>
+            <td mat-cell *matCellDef="let row"> {{row.totalCostWork}} </td>
+          </ng-container>
+  
+             <!--  -->
+             <ng-container matColumnDef="totalAmountPaind">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Total Cost"> Total Amount Paind </th>
+              <td mat-cell *matCellDef="let row"> {{this.coreService.round(row.totalAmountPaind)}} </td>
+            </ng-container>
+            
+  
+               <!--  -->
+          <ng-container matColumnDef="remainingPayable">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Total Cost"> Remaining Payable </th>
+            <td mat-cell *matCellDef="let row"> {{this.coreService.round(row.remainingPayable)}} </td>
+          </ng-container>
+  
+    
+              <!-- Fruit Column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Total Cost"> Status </th>
+                <td mat-cell *matCellDef="let row" style="font-size: 12px;">{{row.status}} </td>
+              </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onNavegateToDetail(row)"></tr>
+      
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    
+    </div>
+    
+    
+    
+    
+  

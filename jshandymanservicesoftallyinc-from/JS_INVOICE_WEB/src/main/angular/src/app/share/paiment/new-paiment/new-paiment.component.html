@@ -1,0 +1,75 @@
+<p>new-paiment works!</p>
+
+<div >
+    <header>
+       <mat-toolbar>
+          <div>{{this.title}}</div>
+       </mat-toolbar>
+    </header>
+ 
+    <body class="mb-3 mt-3">
+ 
+        <form [formGroup]="paymentForm" novalidate  class="container-fluid">
+   
+            <div class="container-fluid">
+
+                <div class="input-group mt-2 d-flex align-items-center" style="width: 100%;">
+                    <label for="payday" class="mr-1">Pay day:</label>
+                    <mat-form-field appearance="fill" style="width: 80%;">
+                      <input matInput [matDatepicker]="picker1" formControlName="payday"
+                        (dateChange)="addEvent('change', $event)" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+
+
+                <div class="row mt-1">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="Amount to Paind" formControlName="amountPaind" required>
+                        <mat-error *ngIf="paymentForm.controls['amountPaind'].hasError('required')">
+                           the Amount to Paind is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+
+                <div class="row mt-1">
+                <mat-form-field style="width: 100%;" appearance="fill">
+                    <textarea matInput placeholder="Description" formControlName="descriptionOfPaind" (keyup)="onDescription()"
+                      required></textarea>
+                    <mat-error *ngIf="paymentForm.controls['descriptionOfPaind'].hasError('required')">
+                      the Description is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="row mt-1">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="type Payment" formControlName="typePayment" >
+                        <mat-error *ngIf="paymentForm.controls['typePayment'].hasError('required')">
+                            type Payment is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+
+              
+
+                <div class="row mt-1">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Bill Number Asociate of paind" formControlName="billNumberAsociate">
+                        <mat-error *ngIf="paymentForm.controls['billNumberAsociate'].hasError('required')">
+                            Bill Number Asociate of paind is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+                  </div>
+                
+          </form>
+
+          <div class="mt-2 mb-2 d-flex justify-content-center" >
+            <button mat-button class="m-1 buttonColorGreen" (click)="onSave()">Save</button>
+            <button mat-button class="m-1 ml-5 buttonColorRed"  (click)="onCancel()">cancel</button>
+          </div>
+    </body>
+ </div>
+

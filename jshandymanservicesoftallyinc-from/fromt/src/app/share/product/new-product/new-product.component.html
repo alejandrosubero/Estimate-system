@@ -1,0 +1,159 @@
+<div style="padding-top: 10px;">
+    <header  >
+       <mat-toolbar class="col mat-elevation-z8 titleMarco" >
+          <div>{{this.titleProduct}}</div>
+       </mat-toolbar>
+    </header>
+ 
+   
+    <body class="mb-3 mt-3">
+        <form [formGroup]="productForm" novalidate  class="container-fluid">
+   
+            <div class="container-fluid">
+                <div class="row-12 mt-1">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Name" formControlName="name" required>
+                        <mat-error *ngIf="productForm.controls['name'].hasError('required')">
+                            Name is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Product Code" formControlName="productCode" required>
+                        <mat-error *ngIf="productForm.controls['productCode'].hasError('required')">
+                            Product Code is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Categories" formControlName="categories">
+                        <mat-error *ngIf="productForm.controls['categories'].hasError('required')">
+                            The categories is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="container-fluid">
+                <div class="row-12 mt-1">
+                  <label for="description" class="m-1">Description:</label>
+                    <mat-form-field style="width: 100%;" appearance="fill">
+                        <textarea matInput placeholder="Description*" formControlName="description" (keyup)="onDescription()" required></textarea>
+                        <mat-error *ngIf="productForm.controls['description'].hasError('required')">
+                         The Description is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="price" formControlName="price" 
+                        (keyup.enter)="checkPrice()" 
+                        (focusout)="checkPrice()" 
+                        required>
+                        <mat-error *ngIf="productForm.controls['price'].hasError('required')">
+                            price is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="Price With Taxes" formControlName="priceWithTaxes">
+                        <mat-error *ngIf="productForm.controls['priceWithTaxes'].hasError('required')">
+                            Price With Taxes is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+
+
+            <div class="container-fluid">
+                <div class="row mt-1">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="Stock Number" formControlName="stockNumber" required 
+                        (keyup.enter)="checkPrice()" 
+                        (focusout)="checkPrice()">
+                        <mat-error *ngIf="productForm.controls['stockNumber'].hasError('required')">
+                            stock Number is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+              </div>
+
+                <div class="row mt-1">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="Total Price With Oup Taxes" formControlName="totalPriceWithOupTaxes">
+                        <mat-error *ngIf="productForm.controls['totalPriceWithOupTaxes'].hasError('required')">
+                            Total Price With Oup Taxes is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+              </div>
+
+                <div class="row mt-1">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput type="number" placeholder="Total Price With Taxes" formControlName="totalPriceWithTaxes">
+                        <mat-error *ngIf="productForm.controls['totalPriceWithTaxes'].hasError('required')">
+                            Total Price With Taxes is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+              </div>
+            </div>
+                
+
+            <div class="container-fluid">
+              <div class="row-12 mt-1">
+                <label for="notas" class="m-1">Notes:</label>
+                  <mat-form-field style="width: 100%;" appearance="fill" >
+                      <textarea matInput placeholder="Notes" formControlName="notas" (keyup)="onNote()" ></textarea>
+                      <!-- <mat-error *ngIf="productForm.controls['note'].hasError('required')">
+                       The Description is <strong>required</strong>
+                      </mat-error> -->
+                    </mat-form-field>
+              </div>
+          </div>
+
+
+
+          </form>
+           
+          <!-- <div class="mt-2 mb-2 d-flex justify-content-center" >
+            <button mat-button class="m-1 buttonColorGreen" (click)="onSave()" >Save</button>
+            <button mat-button class="m-1 ml-5 buttonColorRed" (click)="onCancel()">cancel</button>
+            <button mat-button class="m-1 ml-5 buttonColorBlue"  (click)="panelItem()" *ngIf="this.product.idProduct !== undefined &&  this.product.idProduct != null">Modifi</button>
+          </div> -->
+
+
+  <div class="flex-container mt-2 mb-2">
+    <button mat-button class="m-2 buttonColorGreen" (click)="onSave()" >Save</button>
+    <button mat-button class="m-2 buttonColorRed" (click)="onCancel()">cancel</button>
+    <button mat-button class="m-2 buttonColorBlue"  (click)="panelItem()" *ngIf="this.product.idProduct !== undefined &&  this.product.idProduct != null">Modifi</button>
+  </div>
+
+
+         
+             
+           
+        
+
+
+    </body>
+ </div>

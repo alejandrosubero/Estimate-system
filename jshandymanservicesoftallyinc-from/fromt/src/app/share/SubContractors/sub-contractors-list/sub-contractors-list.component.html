@@ -1,0 +1,29 @@
+
+<table mat-table [dataSource]="dataSourceSubContractorsList" class="mat-elevation-z8">
+
+    <!-- <ng-container matColumnDef="ID">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.idSubContractor}} </td>
+    </ng-container> -->
+  
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element" [ngClass]="element.itemDeliteEdit ? 'tachado' : ''"> {{element.description}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="TotalCost">
+      <th mat-header-cell *matHeaderCellDef>Total Cost</th>
+      <td mat-cell *matCellDef="let element" [ngClass]="element.itemDeliteEdit ? 'tachado' : ''"> {{element.totalCost}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef>Actiones</th>
+      <td mat-cell *matCellDef="let row">
+        <mat-icon (click)="onRemove(row)" style="cursor: pointer; color: rgb(202, 5, 5);">delete_forever</mat-icon>
+          <mat-icon (click)="onAddNewSubcontractor(true, row)" style="cursor: pointer;">create</mat-icon>
+      </td>
+  </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+  </table>

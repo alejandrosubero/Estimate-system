@@ -1,0 +1,23 @@
+.flowRight{
+    float: right;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+.flowRight:active{
+    transform:scale(1.2);
+}
+
+
+.color:hover{
+    background: #fff !important;
+    color: #cc2b2b !important;
+    font-size: large;
+  
+}
+
+
+.color{
+    background-color: green; 
+    color: white; 
+    font-size: large;
+  }

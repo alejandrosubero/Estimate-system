@@ -1,0 +1,64 @@
+
+<div class="topeSeparation">
+  <section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-icon-button aria-label="vertical three dot icon" (click)="onSelltings()">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="h4 text-center font-weight-light p-1 textTitle mb-2">{{this.title}}</div>
+  
+   <br>
+   <div class="container-fluid">
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource2" matSort  (matSortChange)="announceSortChange($event)">
+   
+        <ng-container matColumnDef="idClient">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by ID"> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.idClient}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="from">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="from data"> From </th>
+            <td mat-cell *matCellDef="let row" style="font-size: 12px; font-weight: 800;"> {{row.from}} </td>
+          </ng-container>
+      
+        <ng-container matColumnDef="fullName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name"> FullName </th>
+          <td mat-cell *matCellDef="let row"> {{row.fullName}} </td>
+        </ng-container> 
+
+        <ng-container matColumnDef="zipCode">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Total Cost"> ZipCode </th>
+          <td mat-cell *matCellDef="let row"> {{row.zipCode}} </td>
+        </ng-container> 
+
+        <ng-container matColumnDef="phoneNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Total Cost"> Phone Number </th>
+          <td mat-cell *matCellDef="let row" style="font-size: 12px;"> {{row.phoneNumbers[0].number}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onNavegateToDetail(row)"></tr>
+        <tr class="mat-row" *matNoDataRow><td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  
+  </div>
+
+   </div>
+  
+   
+  
+  
+

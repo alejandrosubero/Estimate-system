@@ -1,0 +1,210 @@
+<section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-icon-button aria-label="vertical three dot icon" (click)="onSelltings()">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="h4 text-center font-weight-light p-1 textTitle mb-2"> 
+    Data Management configuration
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-7 ">
+      
+        <div class="container ">
+
+            <form [formGroup]="profileForm" class="col-12">
+
+                <div class="border p-2 border fondoForm mat-elevation-z4">
+                    <div class="h4 text-center font-weight-light p-1 textTitle"> 
+                        Company Data:
+                    </div>
+
+                    <label for="direction" class="m-1 textColor"> Address:</label>
+                    <div class="input-group mb-3">
+                    <input type="text" 
+                        [class.is-invalid]="profileForm.get('direction').invalid && profileForm.get('direction').touched" 
+                        class="form-control" 
+                        formControlName="direction" id="direction"
+                        placeholder="Address" 
+                        aria-label="direction" 
+                        aria-describedby="basic-addon2" (keyup)="updateInputDirection()">
+                    </div>
+
+                    <label for="mailusername" class="m-1 textColor">Email:</label>
+                    <div class="input-group mb-3">
+                    <input type="email" 
+                        [class.is-invalid]="profileForm.get('mail').invalid && profileForm.get('mail').touched" 
+                        class="form-control" 
+                        formControlName="mail" id="mail"
+                        placeholder="Company Email" 
+                        aria-label="mail" 
+                        aria-describedby="basic-addon2" (keyup)="updateInputMail()">
+                    </div>
+
+                    <label for="direction" class="m-1 textColor">Web:</label>
+                    <div class="input-group mb-3">
+                    <input type="text" 
+                        [class.is-invalid]="profileForm.get('web').invalid && profileForm.get('web').touched" 
+                        class="form-control" 
+                        formControlName="web" id="web"
+                        placeholder="Company web" 
+                        aria-label="web" 
+                        aria-describedby="basic-addon2" (keyup)="updateInputWeb()">
+                    </div>
+
+                    <label for="phoneNumber" class="m-1 textColor">Phone Number:</label>
+                    <div class="input-group mb-3">
+                    <input type="text" 
+                        [class.is-invalid]="profileForm.get('phoneNumber').invalid && profileForm.get('phoneNumber').touched" 
+                        class="form-control" 
+                        formControlName="phoneNumber" id="phoneNumber"
+                        placeholder="Company Phone Number" 
+                        aria-label="phoneNumber" 
+                        aria-describedby="basic-addon2" (keyup)="updateInputPhoneNumber()">
+                    </div>
+                
+                    <label for="taxRegNumber" class="m-1 textColor">
+                        Tax Registration Number 
+                            <samp  #tooltip="matTooltip"  
+                            matTooltip="What is a tax registration number? This nine-digit number is assigned by the IRS to identify businesses for tax purposes"
+                            matTooltipClass="tooltip-tooltip-blue"> 
+                            <mat-icon>help</mat-icon> 
+                        </samp> :
+                    </label>
+                    <div class="input-group mb-3">
+                    <input type="text"  
+                        [class.is-invalid]="profileForm.get('taxRegNumber').invalid && profileForm.get('taxRegNumber').touched" 
+                        class="form-control" 
+                        formControlName="taxRegNumber" id="taxRegNumber"
+                        placeholder="" 
+                        aria-label="taxRegNumber" 
+                        aria-describedby="basic-addon2"   (keyup)="updateInputTaxRegNumber()">
+                    </div>
+                    
+                    <label for="company" class="m-1 textColor">Company Name:</label>
+                    <div class="input-group mb-3">
+                      <input type="text" 
+                        [class.is-invalid]="profileForm.get('company').invalid && profileForm.get('company').touched" 
+                        class="form-control" 
+                        formControlName="company" id="company"
+                        placeholder="Company Name" 
+                        aria-label="company" 
+                        aria-describedby="basic-addon2" (keyup)="updateInputCompany()">
+                    </div>
+
+                    <br>
+                </div>
+             
+              
+                <div style="background-color: rgb(235, 235, 235);" class="border p-2">
+                    <div class="h4 text-center font-weight-light p-1 textTitle"> 
+                        Coments for template:
+                    </div>
+
+                    <label for="coments1" class="m-1 textColor">Body coments:</label>
+                    <div class="input-group mb-3">
+                      
+                        <textarea  
+                        [class.is-invalid]="profileForm.get('coments1').invalid && profileForm.get('coments1').touched" 
+                        class="form-control"  
+                        placeholder="Body coments*" 
+                        formControlName="coments1"
+                        aria-label="coments1" id="coments1" (keyup)="updateInputComents1()"></textarea>
+                    </div>
+                  
+                    <label for="coments2" class="m-1 textColor">coments2:</label>
+                    <div class="input-group mb-3">
+                      <input type="text" 
+                        [class.is-invalid]="profileForm.get('coments2').invalid && profileForm.get('coments2').touched" 
+                        class="form-control" 
+                        formControlName="coments2" id="coments2"
+                        placeholder="coments" 
+                        aria-label="coments2" 
+                        aria-describedby="basic-addon2" (keyup)="updateInputComents2()">
+                    </div>
+
+                    <label for="coments3" class="m-1 textColor">coments3:</label>
+                    <div class="input-group mb-3">
+                      <input type="text" 
+                        [class.is-invalid]="profileForm.get('coments3').invalid && profileForm.get('coments3').touched" 
+                        class="form-control" 
+                        formControlName="coments3" id="coments3"
+                        placeholder="coments" 
+                        aria-label="coments3" 
+                        aria-describedby="basic-addon2" (keyup)="updateInputComents3()">
+                    </div>
+
+                    <label for="coments4" class="m-1 textColor">coments4:</label>
+                    <div class="input-group mb-3">
+                      <input type="text" 
+                        [class.is-invalid]="profileForm.get('coments4').invalid && profileForm.get('coments4').touched" 
+                        class="form-control" 
+                        formControlName="coments4" id="coments4"
+                        placeholder="coments" 
+                        aria-label="coments4" 
+                        aria-describedby="basic-addon2"   (keyup)="updateInputComents4()">
+                    </div>
+                   
+                  
+                    <br>
+                </div>
+               
+                <div style="background-color: rgb(235, 235, 235);" class="border p-2">
+                    <div class="h4 text-center font-weight-light p-1 textTitle"> 
+                        Deadline alert settings:
+                    </div>
+
+                    <label for="deadLineAlert" class="m-1 textColor">
+                        Days for Deadline alert notification
+                            <samp  
+                                #tooltip="matTooltip"  
+                                matTooltip="Enter the number of days before the dedline to start the alerts."
+                                matTooltipClass="tooltip-tooltip-blue">
+                                <mat-icon>info</mat-icon>
+                            </samp>:
+                    </label>
+                    <div class="input-group mb-3">
+                      <input type="text" 
+                        [class.is-invalid]="profileForm.get('deadLineAlert').invalid && profileForm.get('deadLineAlert').touched" 
+                        class="form-control" 
+                        formControlName="deadLineAlert" id="deadLineAlert"
+                        placeholder="deadLineAlert" 
+                        aria-label="deadLineAlert" 
+                        aria-describedby="basic-addon2" (keyup)="updateInputDeadLineAlert()">
+                    </div>
+                    <br>
+                </div>
+              
+            </form>
+          
+            <div class="d-flex justify-content-center mt-2">
+              <button class="btn btn-primary m-1  " (click)=" send()">Save</button>
+              <button class="btn btn-primary m-1  " (click)=" onSelltings()">Cancel</button>
+            </div>
+          
+          </div>
+
+      </div>
+      <div class="col-sm-5 border mat-elevation-z4">
+        <app-data-configuration-view 
+                [invoiceView]="this.work" 
+                [printProduct]="this.email.printProduct"  
+                [profitCalculation]="this.subcontractorsTotalProfit" 
+                [billTotalOverhead]="billTotalOverhead"
+                [servicesTotalOverhead]="servicesTotalOverhead"
+                [servicesTotal]="this.servicesTotal"  
+                [subcontractorsTotal]="this.subcontractorsTotal" 
+                [billLastTotal]="this.billLastTotal"
+                [dataJshandyManServices]="this.dataJshandyManServices"
+                >
+        </app-data-configuration-view>
+      </div>
+    </div>
+  </div>

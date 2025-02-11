@@ -1,0 +1,93 @@
+table {
+    width: 100%;
+    justify-content: center;
+  }
+  
+
+  /* .mat-column-name {
+    Word-wrap: break-Word !important;
+    white-space: unset !important;
+    flex: 0 0 25% !important;
+    width: 15% !important;
+    margin: 0 0 0 10px;
+    overflow-wrap: break-Word;
+    Word-wrap: break-Word;
+    Word-break: break-Word;
+  
+    border: black solid 2px !important;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  } */
+  
+  /* .mat-column-starDate {
+    Word-wrap: break-Word !important;
+    white-space: unset !important;
+    flex: 0 0 15% !important;
+    width: 10% !important;
+    margin: 0 0 0 10px;
+    overflow-wrap: break-Word;
+    Word-wrap: break-Word;
+    Word-break: break-Word;
+    
+    border: black solid 2px;
+    
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  } */
+
+  .mat-column-id {
+    Word-wrap: break-Word !important;
+    white-space: unset !important;
+    flex: 0 0 15% !important;
+    width: 10% !important;
+    margin: 0 0 0 10px;
+    overflow-wrap: break-Word;
+    Word-wrap: break-Word;
+    Word-break: break-Word;
+        
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .ex-button-row button,
+.ex-button-row a {
+  margin-right: 8px;
+}
+
+.cleanFlow{
+    overflow: hidden;
+}
+
+.flowRight{
+  float: right;
+}
+
+.caja2{
+    border-radius: 17px;
+    background: #e0e0e0;
+    box-shadow:  5px -5px 12px #b1b1b1, -5px 5px 12px #ffffff;
+}
+
+.caja{
+    border-radius: 0px;
+    background: linear-gradient(225deg, #fbfbfb, #fbfbfb);
+    box-shadow:  -9px 9px 16px #b3b3b3, 9px -9px 16px #ffffff;
+    
+}

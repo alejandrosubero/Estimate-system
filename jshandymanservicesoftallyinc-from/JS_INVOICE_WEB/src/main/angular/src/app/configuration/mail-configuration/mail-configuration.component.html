@@ -1,0 +1,71 @@
+
+ <section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-icon-button aria-label="vertical three dot icon" (click)="onSelltings()">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="h4 text-center font-weight-light p-1 textTitle"> 
+    Mail Management
+</div>
+
+<div class="container">
+
+    <form [formGroup]="profileForm" class="col-12">
+
+      <div class="border p-2 border fondoForm mat-elevation-z4">
+        <label for="host" class="m-1 textColor">Host:</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="host" id="host"
+            placeholder="Host server" aria-label="host" aria-describedby="basic-addon2">
+        </div>
+
+        <label for="port" class="m-1 textColor">Port:</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="port" id="port"
+            placeholder="Port server" aria-label="port" aria-describedby="basic-addon2">
+        </div>
+
+        <label for="mailusername" class="m-1 textColor">Email username:</label>
+        <div class="input-group mb-3">
+          <input type="password" 
+            [class.is-invalid]="profileForm.get('mailusername').invalid && profileForm.get('mailusername').touched" 
+            class="form-control" 
+            formControlName="mailusername" id="mailusername"
+            placeholder="Email account username" 
+            aria-label="mailusername" 
+            aria-describedby="basic-addon2">
+          <span class="input-group-text" id="basic-addon2" (click)="viewUserName()">
+            <mat-icon>{{iconUser}}</mat-icon>
+          </span>
+        </div>
+
+
+        <label for="mailpassword" class="m-1 textColor">Password:</label>
+        <div class="input-group mb-3">
+          <input type="mailpassword" 
+            class="form-control" 
+            formControlName="mailpassword" 
+            id="mailpassword"
+            placeholder="password" 
+            aria-label="password" 
+            aria-describedby="basic-addon2">
+          <span class="input-group-text" id="basic-addon2" (click)="viewPassword()">
+            <mat-icon>{{icon}}</mat-icon>
+          </span>
+        </div>
+      </div>
+        
+
+    </form>
+  
+    <div class="d-flex justify-content-center mt-2">
+      <button class="btn btn-primary m-1 " (click)="send()">Save</button>
+      <button class="btn btn-primary m-1 " (click)="onSelltings()">Cancel</button>
+    </div>
+  
+  </div>

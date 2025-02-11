@@ -1,0 +1,300 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+/* @import "styles/spinner"; */
+
+@import '~font-awesome/css/font-awesome.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.fondoForm {
+  background-color: rgb(235, 235, 235);
+}
+
+.divContainer {
+  /* margin-top: 1px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    margin-left: 1px; */
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 1);
+  box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 1);
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: small;
+}
+
+
+.divContainerTituloGral {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 1);
+  box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 1);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+
+
+.full-width {
+  width: 100%;
+}
+
+.centrar {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  /* position: absolute; top: 50%; left: 50%; margin: -25px 0 0 -25px; */
+}
+
+.tachado {
+  text-decoration: line-through !important;
+  color: black;
+}
+
+.buttonColorBlue {
+  background-color: rgb(74, 8, 228);
+  color: white;
+}
+
+.buttonColorRed {
+  background-color: rgb(202, 5, 5);
+  color: white;
+}
+
+.buttonColorGreen {
+  background-color: green;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  /* // Making the modal fullscreen in mobiles */
+  .cdk-overlay-pane {
+    width: 100vw !important;
+    height: 90vh !important;
+    min-width: 100px !important; 
+  }
+
+  .mat-select-panel {
+    min-width: auto !important;
+    margin-top:64px !important;
+    margin-left: 60px !important;
+  }
+}
+
+
+.custompanel{
+  margin-top:64px;
+  margin-left: 55px;
+ }
+
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+@media (max-width: 540px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+.titleMarco{
+  background-color: rgba(0, 0, 0, 0.966); 
+  color: rgb(253, 253, 253);
+}
+
+
+.topeSeparation{
+  padding-top: 10px;
+}
+
+
+/* spinner */
+
+
+#loader {
+  bottom: 0;
+  height: 175px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 175px;
+}
+
+#loader {
+  bottom: 0;
+  height: 175px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 175px;
+}
+
+#loader .dot {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 87.5px;
+}
+
+#loader .dot::before {
+  border-radius: 100%;
+  content: "";
+  height: 87.5px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0);
+  width: 87.5px;
+}
+
+#loader .dot:nth-child(7n+1) {
+  transform: rotate(45deg);
+}
+
+#loader .dot:nth-child(7n+1)::before {
+  animation: 0.8s linear 0.1s normal none infinite running load;
+  background: #00ff80 none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+2) {
+  transform: rotate(90deg);
+}
+
+#loader .dot:nth-child(7n+2)::before {
+  animation: 0.8s linear 0.2s normal none infinite running load;
+  background: #00ffea none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+3) {
+  transform: rotate(135deg);
+}
+
+#loader .dot:nth-child(7n+3)::before {
+  animation: 0.8s linear 0.3s normal none infinite running load;
+  background: #00aaff none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+4) {
+  transform: rotate(180deg);
+}
+
+#loader .dot:nth-child(7n+4)::before {
+  animation: 0.8s linear 0.4s normal none infinite running load;
+  background: #0040ff none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+5) {
+  transform: rotate(225deg);
+}
+
+#loader .dot:nth-child(7n+5)::before {
+  animation: 0.8s linear 0.5s normal none infinite running load;
+  background: #2a00ff none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+6) {
+  transform: rotate(270deg);
+}
+
+#loader .dot:nth-child(7n+6)::before {
+  animation: 0.8s linear 0.6s normal none infinite running load;
+  background: #9500ff none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+7) {
+  transform: rotate(315deg);
+}
+
+#loader .dot:nth-child(7n+7)::before {
+  animation: 0.8s linear 0.7s normal none infinite running load;
+  background: rgb(255, 145, 0) none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+8) {
+  transform: rotate(360deg);
+}
+
+#loader .dot:nth-child(7n+8)::before {
+  animation: 0.8s linear 0.8s normal none infinite running load;
+  background: #ff0000 none repeat scroll 0 0;
+}
+
+#loader .loading {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  bottom: -40px;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 180px;
+}
+
+@keyframes load {
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes load {
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.spinner-message {
+  text-align: center;
+}
+
+
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.overlays {
+  position: absolute;
+  z-index: 1002;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}

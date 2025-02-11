@@ -1,0 +1,34 @@
+.ex-action-buttons {
+    padding-bottom: 20px;
+  }
+  
+  .ex-headers-align .mat-expansion-panel-header-title,
+  .ex-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  
+  .ex-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ex-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  .Dold{
+    font-weight: 700;
+  }
+  
+  .DoldTex{
+    font-weight: 800;
+  }
+
+  .buttonEdid{
+    background-color: rgb(85, 43, 235); 
+    color: white;
+  }
+
+  .flowRight{
+    float: right;
+  }
