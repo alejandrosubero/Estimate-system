@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+<br>
+<hr style="border: none; border-top: 2px dashed black;" />
+<div style="padding: 20px; max-width: 600px; margin: 0 auto; display: grid; grid-gap: 20px; grid-template-columns: repeat(auto- fit, minmax(200px, 1fr)); border: black solid 1px; font-size: 10px;">
+  <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center;  margin-bottom: 5px;">
+    <div style="text-align: left;">
+      <label>Please detach and send with remittance to:</label>
+    </div>
+    <div style="text-align: right;">
+      <label>Remittance Advice for Invoice # @invoiceID@</label>
+      <label>On @createDateInvoice@</label>
+    </div>
+  </div>
+  <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+    <div style="width: 100%;">
+      <label>JS Handyman Services of Tally, Inc</label>
+    </div>
+    <div style="text-align: right;">
+      <label>
+        <samp>Balance Due</samp>
+        <samp style="margin-left: 5px;">$ @TotalAmountInvoice@</samp>
+      </label>
+    </div>
+  </div>
+  <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+    <div style="width: 100%;">
+      <label>@Direction@</label>
+    </div>
+    <div style="text-align: right;">
+      <label>Paid </label>
+      <label> _______________</label>
+    </div>
+  </div>
+  <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+    <div style="text-align: right;">
+      <label>Received From: @clientName@</label>
+    </div>
+  </div>
+  <div style="border: black solid 1px; padding-top: 10px; padding-left: 30px; padding-right: 30px; padding-bottom: 10px;">
+    <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;"
+         style="margin-top: 8px; padding-bottom: 3px;">
+      <div style="width: 100%;">
+        <label>Card Type</label>
+      </div>
+    </div>
+    <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+      <div style="width: 100%;">
+        <label>Cardholder's Name</label>
+        <label style="text-align: right;" >____________________________</label>
+<!--        <samp>______________________</samp>-->
+      </div>
+<!--      <div style="text-align: right; margin-left: 50px; width: 100%;">-->
+<!--        <label>______________________</label>-->
+<!--      </div>-->
+<!--      <div style="width: 100%;">-->
+<!--        <label>______________________</label>-->
+<!--      </div>-->
+    </div>
+    <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+      <div style="width: 100%;">
+        <label>Card Nunber</label>
+      </div>
+      <div style="width: 100%;">
+        <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+          <div style=" margin: 0; width: 100%; display: flex; flex-direction: row; align-items: center;" style="margin-right:12px;">
+            <div style="align-items: center;">
+              <img src="@imgCart@" style="width:80%; height: 30px;" alt="date"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div  style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+      <div style="width: 100%;">
+        <label >Expiry Date</label>
+      </div>
+      <div style="width: 100%;">
+        <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+          <div style=" margin: 0; width: 100%; display: flex; flex-direction: row; align-items: center;">
+            <div style="align-items: center;">
+              <img src="@imgDate@" style="width:20%; height: 30px;" alt="date"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style=" display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 5px;">
+      <div style="width: 100%;">
+        <label >Signature </label>
+      </div>
+      <div style="width: 100%;">
+        <div style="border: black solid 1px; width: 100%; height: 50px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
